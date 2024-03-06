@@ -50,7 +50,7 @@ class Student:
     def __str__(self):
         some_student = f'Имя: {self.name}\n' \
                        f'Фамилия: {self.surname}\n' \
-                       f'Средняя оценка за домашнее задание: {self.__average}\n' \
+                       f'Средняя оценка за домашнее задание: {self.__average()}\n' \
                        f'Курсы в процессе изучения: {self.courses_in_progress}\n' \
                        f'Завершенные курсы: {self.finished_courses}'
         return some_student
@@ -75,7 +75,7 @@ class Lecturer(Mentor):
             self.averages = (sum(self.average) / len(self.average))
             return self.averages
         else:
-            return ("Нет оценок")
+            return ("Нет оценки")
 
     def __eq__(self, other):
         if not isinstance(other, Lecturer):
@@ -101,7 +101,7 @@ class Lecturer(Mentor):
     def __str__(self):
         some_lecturer = f'Имя: {self.name}\n' \
                         f'Фамилия: {self.surname}\n' \
-                        f'Средняя оценка за лекцию: {self.__average}'
+                        f'Средняя оценка за лекцию: {self.__average()}'
         return some_lecturer
 
 
